@@ -41,12 +41,25 @@
 			"ES2019",
 			"DOM",
 		],
+		"types": [
+			"@remix-run/node/globals",
+			"@remix-run/dev"
+		],
 		"paths": {
 			"@public/*": [
 				"./public/contexts/*"
 			],
+			"@components/*": [
+				"./app/components/*"
+			],
 			"@routes/*": [
 				"./app/routes/*"
+			],
+			"@styles/*": [
+				"./app/styles/*"
+			],
+			"@types/*": [
+				"./app/@types/*"
 			],
 			"~/*": [
 				"./app/*"

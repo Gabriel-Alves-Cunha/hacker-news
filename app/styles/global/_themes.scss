@@ -1,0 +1,73 @@
+.light {
+	// Links:
+	--color-links-hover: hsl(var(--color-links) 45%);
+	--color-links: hsl(241, 100%, 62%);
+
+	// Borders:
+	--color-border: hsl(277, 85%, 38%);
+	--border-radius: 0.25rem;
+
+	// Fonts:
+	--font-family: "Nunito Sans", Roboto, Arial, sans-serif;
+
+	// Texts:
+	--accent-text-color: #ac42d2;
+	--light-text-color: rgb(80, 79, 79);
+	--text-color: rgb(0, 0, 0);
+
+	// Backgrounds and foregrounds:
+	--gradient-background: radial-gradient(
+		circle,
+		rgba(152, 11, 238, 1) 0%,
+		rgba(118, 15, 181, 1) 35%,
+		rgba(58, 13, 85, 1) 100%
+	);
+	--background-color: #fff;
+}
+
+.dark {
+	// Links:
+	--color-links-hover: hsl(var(--color-links) 45%);
+	--color-links: hsl(241, 100%, 62%);
+
+	// Borders:
+	--color-border: hsl(277, 85%, 38%);
+	--border-radius: 0.25rem;
+
+	// Fonts:
+	--font-family: "Nunito Sans", Roboto, Arial, sans-serif;
+
+	// Texts:
+	--accent-text-color: #ac42d2;
+	--light-text-color: rgb(121, 121, 121);
+	--text-color: #fff;
+
+	// Backgrounds and foregrounds:
+	--gradient-background: radial-gradient(
+		circle,
+		rgba(152, 11, 238, 1) 0%,
+		rgba(118, 15, 181, 1) 35%,
+		rgba(58, 13, 85, 1) 100%
+	);
+	--background-color: rgb(0, 0, 0);
+}
+
+@function assert-light-and-dark-theme-are-equal-by-keys($light-theme, $dark-theme) {
+	@debug "$light-theme is: #{$light-theme}";
+	@debug "$dark-theme is: #{$dark-theme}";
+
+	$start: list.nth(map.keys($light-theme), 0);
+	$len: length(map.keys($light-theme));
+
+	@for $key from start through len {
+		@debug "Key is '#{$key}'";
+
+		@if not map-has-key($dark-theme, $key) {
+			@error "Dark theme does not have the key '#{key}' from the light theme!";
+		}
+
+		@if not map-has-key($light-theme, $key) {
+			@error "Light theme does not have the key '#{key}' from the dark theme!";
+		}
+	}
+}
