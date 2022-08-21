@@ -1,0 +1,5 @@
+- maybe noto sans as a font
+
+* Notes
+
+- tailwind center text on X and Y: "flex items-center justify-center".

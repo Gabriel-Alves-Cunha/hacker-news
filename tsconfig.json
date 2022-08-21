@@ -46,9 +46,6 @@
 			"@remix-run/dev"
 		],
 		"paths": {
-			"@public/*": [
-				"./public/contexts/*"
-			],
 			"@components/*": [
 				"./app/components/*"
 			],
@@ -60,6 +57,9 @@
 			],
 			"@types/*": [
 				"./app/@types/*"
+			],
+			"@public/*": [
+				"./public/*"
 			],
 			"~/*": [
 				"./app/*"

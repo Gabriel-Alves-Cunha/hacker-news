@@ -8,6 +8,6 @@ module.exports = {
 	// serverBuildPath: "api/index.js",
 	ignoredRouteFiles: ["**/.*"],
 	serverBuildTarget: "vercel",
-	// publicPath: "/build/",
+	publicPath: "/public/",
 	// appDirectory: "app",
 };

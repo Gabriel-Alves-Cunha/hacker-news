@@ -1,13 +1,7 @@
-import type { LinksFunction } from "@remix-run/node";
+import { Outlet } from "@remix-run/react";
 
-import styles from "@styles/index.css";
-
-////////////////////////////////////////////////
-////////////////////////////////////////////////
-////////////////////////////////////////////////
-// Links, metas and actions:
-
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+import { Header } from "@components/Header";
+import { Footer } from "@components/Footer";
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
@@ -17,11 +11,13 @@ export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 export default function Index() {
 	return (
 		<>
-			<header></header>
+			<Header />
 
-			<main></main>
+			<main>
+				<Outlet />
+			</main>
 
-			<footer></footer>
+			<Footer />
 		</>
 	);
 }

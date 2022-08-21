@@ -3,6 +3,11 @@ import type { EntryContext } from "@remix-run/node";
 import { renderToString } from "react-dom/server";
 import { RemixServer } from "@remix-run/react";
 
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// Main function:
+
 export default function handleRequest(
 	request: Request,
 	responseStatusCode: number,

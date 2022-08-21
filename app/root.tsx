@@ -10,7 +10,12 @@ import {
 	Meta,
 } from "@remix-run/react";
 
-import globalStyles from "@styles/global/global.css";
+import styles from "./tailwind.css";
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// Links, Meta and actions:
 
 // dprint-ignore
 export const links: LinksFunction = () => [
@@ -20,51 +25,60 @@ export const links: LinksFunction = () => [
 	},
 	{ rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
 	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
-	{ rel: "stylesheet", href: globalStyles },
+	{ rel: "stylesheet", href: styles },
 ];
 
+////////////////////////////////////////////////
+
+export const hackerNewsTitle = "Hacker News";
+
 export const meta: MetaFunction = () => {
-	const description = "Learn Remix and laugh at the same time!";
-	const title = "Hacker News";
+	const description = "Read awesome news in the developer space!";
 
 	return {
 		// "twitter:image": "https://remix-jokes.lol/social.png",
 		viewport: "width=device-width,initial-scale=1",
+		keywords: "Hacker,News,Computer,Developer",
 		// "twitter:card": "summary_large_image",
 		"twitter:description": description,
 		// "twitter:creator": "@remix_run",
+		"twitter:title": hackerNewsTitle,
 		// "twitter:site": "@remix_run",
-		keywords: "Remix,jokes",
-		"twitter:title": title,
+		title: hackerNewsTitle,
 		charset: "utf-8",
 		description,
-		title,
 	};
 };
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
 
 function Document({ children, title = "Hacker News" }: DocumentProps) {
 	return (
 		<html lang="en">
 			<head>
-				<Meta />
-
 				<title>{title}</title>
 
 				<Links />
+
+				<Meta />
 			</head>
 
 			<body>
 				{children}
 
-				<Scripts />
-
 				<ScrollRestoration />
+
+				<Scripts />
 
 				<LiveReload />
 			</body>
 		</html>
 	);
 }
+
+////////////////////////////////////////////////
 
 export default function App() {
 	return (
@@ -73,6 +87,11 @@ export default function App() {
 		</Document>
 	);
 }
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// Error handlers:
 
 export function ErrorBoundary({ error }: { error: Error; }) {
 	console.error(error);
@@ -88,6 +107,8 @@ export function ErrorBoundary({ error }: { error: Error; }) {
 	);
 }
 
+////////////////////////////////////////////////
+
 export function CatchBoundary() {
 	const caught = useCatch();
 
@@ -99,5 +120,10 @@ export function CatchBoundary() {
 		</Document>
 	);
 }
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// Types:
 
 type DocumentProps = Readonly<{ children: React.ReactNode; title?: string; }>;
