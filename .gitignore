@@ -9,4 +9,5 @@ node_modules
 /api/index.js.map
 /public/build
 /api/index.js
+/api/_assets
 /build/
