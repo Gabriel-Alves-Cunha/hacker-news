@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { FooterLink } from "./FooterLink";
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////
@@ -9,29 +9,35 @@ export function Footer() {
 	// const data = useLoaderData<FooterData>();
 
 	return (
-		<footer className="flex absolute bottom-0">
-			<Link aria-label={guidelines} title={guidelines} to="guidelines">
-				{guidelines}
-			</Link>
+		<footer className="flex relative bottom-0 w-full h-footer justify-center content-center text-xs border-t-2 border-orange-500 bg-[#181a1b] text-white items-center [&>span]:gap-3">
+			<FooterLink title={guidelines} to="guidelines" />
 
-			<Link aria-label={faq} title={faq} to="faq">{faq}</Link>
+			<span>|</span>
 
-			<Link aria-label={lists} title={lists} to="lists">{lists}</Link>
+			<FooterLink title={faq} to="faq" />
 
-			<Link aria-label={api} title={api} to="api">{api}</Link>
+			<span>|</span>
 
-			<Link aria-label={security} title={security} to="security">
-				{security}
-			</Link>
+			<FooterLink title={lists} to="lists" />
 
-			<Link aria-label={legal} title={legal} to="legal">{legal}</Link>
+			<span>|</span>
 
-			<Link aria-label={contact} title={contact} to="contact">{contact}</Link>
+			<FooterLink title={api} to="api" />
+
+			<span>|</span>
+
+			<FooterLink title={security} to="security" />
+
+			<span>|</span>
+
+			<FooterLink title={legal} to="legal" />
+
+			<span>|</span>
+
+			<FooterLink title={contact} to="contact" />
 		</footer>
 	);
 }
-
-// #202012
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////

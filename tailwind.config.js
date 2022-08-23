@@ -5,7 +5,20 @@ const config = {
 		fontFamily: {
 			sans: ["Nunito Sans", "Roboto", "Arial", "sans-serif"],
 		},
-		extend: {},
+		extend: {
+			height: {
+				header: "var(--header-height)",
+				footer: "var(--footer-height)",
+			},
+			margin: {
+				header: "var(--header-height)",
+				footer: "var(--footer-height)",
+			},
+			padding: {
+				header: "var(--header-height)",
+				footer: "var(--footer-height)",
+			},
+		},
 	},
 	plugins: [],
 };

@@ -10,6 +10,9 @@ import {
 	Meta,
 } from "@remix-run/react";
 
+import { Footer } from "@components/Footer";
+import { Header } from "@components/Header";
+
 import styles from "./tailwind.css";
 
 ////////////////////////////////////////////////
@@ -65,7 +68,7 @@ function Document({ children, title = "Hacker News" }: DocumentProps) {
 				<Meta />
 			</head>
 
-			<body>
+			<body className="bg-[#202012] selection:bg-orange-500 selection:text-white">
 				{children}
 
 				<ScrollRestoration />
@@ -83,7 +86,13 @@ function Document({ children, title = "Hacker News" }: DocumentProps) {
 export default function App() {
 	return (
 		<Document>
-			<Outlet />
+			<Header />
+
+			<main className="min-h-full">
+				<Outlet />
+			</main>
+
+			<Footer />
 		</Document>
 	);
 }

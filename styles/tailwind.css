@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	:root {
+		--header-height: 1.75rem;
+		--footer-height: 5rem;
+	}
+}
+
 @layer components {
 	.custom-class {
 		/* @apply ...; */

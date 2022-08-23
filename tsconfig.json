@@ -55,6 +55,12 @@
 			"@styles/*": [
 				"./app/styles/*"
 			],
+			"@hooks/*": [
+				"./app/hooks/*"
+			],
+			"@utils/*": [
+				"./app/utils/*"
+			],
 			"@types/*": [
 				"./app/@types/*"
 			],
